@@ -1031,10 +1031,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.5.tgz#dcce4430e64b443ba8945f0290fb564ad5bac6dd"
   integrity sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
 
-"@types/node@^14.0.14":
-  version "14.0.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.14.tgz#24a0b5959f16ac141aeb0c5b3cd7a15b7c64cbce"
-  integrity sha512-syUgf67ZQpaJj01/tRTknkMNoBBLWJOBODF0Zm4NrXmiSuxjymFrxnTu1QVYRubhVkRcZLYZG8STTwJRdVm/WQ==
+"@types/node@^14.0.15":
+  version "14.0.15"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.15.tgz#f081f3fe4cabb93d7b98a674bd4962ee33bcf6d6"
+  integrity sha512-ayQ+QYNnFMOQ2tDdZka7OIhC0CGiEmi0R0qLQirylvEshrywI8PwSdeVyLj6ZpqurEnKHxq/M+hWaMRYiL1pKg==
 
 "@types/prop-types@*":
   version "15.7.3"
