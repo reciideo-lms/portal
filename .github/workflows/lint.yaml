@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-report
-          path: /tmp/lint/super-linter.report
+          path: ${{ env.GITHUB_WORKSPACE }}/super-linter.report
