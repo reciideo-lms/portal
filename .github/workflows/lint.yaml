@@ -18,19 +18,7 @@ jobs:
       - name: Lint Code Base
         uses: docker://github/super-linter:v3
         env:
-          VALIDATE_PERL: false
-          VALIDATE_RAKU: false
-          VALIDATE_PHP: false
-          VALIDATE_PYTHON: false
-          VALIDATE_RUBY: false
-          VALIDATE_GO: false
-          VALIDATE_CLOJURE: false
-          VALIDATE_KOTLIN: false
-          VALIDATE_DART: false
-          VALIDATE_ANSIBLE: false
           DISABLE_ERRORS: ${{ secrets.LINT_DISABLE_ERRORS }}
-          OUTPUT_FORMAT: tap
-          OUTPUT_DETAILS: detailed
 
       - name: Upload Test Report
         if: ${{ always() }}
