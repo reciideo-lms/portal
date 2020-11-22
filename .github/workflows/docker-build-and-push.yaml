@@ -17,7 +17,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      - name: Build and push image
+      - name: Prepare image tag
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository }}
 
@@ -26,11 +26,12 @@ jobs:
 
           VERSION=latest
 
-          docker build . --file Dockerfile \
-            --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
-            --build-arg VCS_REF=${GITHUB_SHA::8} \
-            --tag $IMAGE_ID:$VERSION
-
-          if (${{github.ref}} == "refs/heads/master"); then
-            docker push $IMAGE_ID:$VERSION
-          fi
+      - name: Build and push Docker image
+        id: docker_build
+        uses: docker/build-push-action@v2.2.0
+        with:
+          push: true
+          tags: $IMAGE_ID:$VERSION
+          build-args: |
+            BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+            VCS_REF=${GITHUB_SHA::8}
