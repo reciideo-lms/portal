@@ -17,21 +17,12 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      - name: Prepare image tag
-        run: |
-          IMAGE_ID=ghcr.io/${{ github.repository }}
-
-          # Change all uppercase to lowercase
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-
-          VERSION=latest
-
       - name: Build and push Docker image
         id: docker_build
         uses: docker/build-push-action@v2.2.0
         with:
           push: true
-          tags: $IMAGE_ID:$VERSION
+          tags: ghcr.io/$(echo ${{ github.repository }} | tr '[A-Z]' '[a-z]'):latest
           build-args: |
             BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
             VCS_REF=${GITHUB_SHA::8}
