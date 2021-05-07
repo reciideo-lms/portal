@@ -12,7 +12,7 @@ RUN yarn install --prod
 
 
 
-FROM node:14.5.0-alpine3.12
+FROM node:16.1.0-alpine3.12
 
 LABEL org.opencontainers.image.source="https://github.com/reciideo-lms/portal"
 
